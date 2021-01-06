@@ -1,4 +1,5 @@
 #include <iostream>
+#include<fstream>
 #include <string>
 
 using namespace std;
@@ -70,6 +71,31 @@ class Room
 			statusEmpty = true;
 		}
 };
+
+void InsertFile(const char* filename, int x, int a[])
+{
+	ifstream in(filename);
+	if(in.is_open())
+    {
+		bool swapped = true;
+		
+	    int y = 0;
+	    int tmp;
+	    while (swapped) {
+	        swapped = false;
+			y++;
+	        for (int i = 0; i < x - y; i++) {
+	      			if (a[i] > a[i + 1]) {
+	                    tmp = a[i];
+	                    a[i] = a[i + 1];
+	                    a[i + 1] = tmp;
+	                    swapped = true;
+						}
+	                  }
+	
+	            }
+	}else cout<<"Error: File Cannot be Found"<<endl;
+}
 
 int main ()
 {
