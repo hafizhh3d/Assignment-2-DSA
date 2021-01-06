@@ -61,23 +61,6 @@ class Room
 		{
 			nameCustomer = nc;
 			statusEmpty = false;
-
-			getRoom();
-			getStatusEmpty();
-			while (statusEmpty = true)
-			{
-				cout << "Available Room: " << endl;
-				for (int i = 0; i < sizeof(room); i++) //sizeof(total room keseluruhan)
-				{
-					cout << room; 
-				}
-			}
-
-			cout << endl;
-			cout << "Enter Room Number: ";
-			cin >> room;
-			cout << "Enter Your Name: ";
-			cin >> nc;
 		}
 		
 		// Function for Room Check Out
