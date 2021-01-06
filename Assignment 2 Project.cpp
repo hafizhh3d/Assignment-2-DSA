@@ -71,6 +71,15 @@ class Room
 		}
 };
 
+void roomCheckIn(string name, int rn)
+{	
+	cout << "Please Complete Information Needed" << endl
+		 << "Enter Your Name: ";
+	cin >> name;
+	cout << "Enter Room Number: ";
+	cin >> rn;
+}
+
 int main ()
 {
 	cout << "Hotel Mangement System" << endl;
