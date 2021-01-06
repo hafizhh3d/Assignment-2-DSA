@@ -3,7 +3,7 @@
 
 using namespace std;
 
-<<<<<<< HEAD
+
 void menu()
 {
 	cout << "=============================" << endl;
@@ -11,12 +11,14 @@ void menu()
 	cout << "=============================" << endl << endl;
 	
 	cout << "1. Check Available Room" << endl;
-	cout << "2. Book Room" << endl;
-	cout << "3. Exit" << endl << endl;
+	cout << "2. Room Check In" << endl;
+	cout << "3. Room Check Out" << endl;
+	cout << "4. Search Room" << endl;
+	cout << "5. Exit" << endl << endl;
 	
 	cout << "Choose Option : ";
 }
-=======
+
 class Room
 {
 	// Private data attribute for Class Room
@@ -84,13 +86,12 @@ class Room
 			statusEmpty = true;
 		}
 };
->>>>>>> origin/master
 
 int main ()
 {
 	int choice = 0; // Variable for Choice
 	
-	while (choice != 3)
+	while (choice != 5)
 	{
 		menu();
 		cin >> choice;
