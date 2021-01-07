@@ -72,24 +72,24 @@ class Room
 		}
 };
 
-void printFile(const char* filename, int totRoom, int arr[], string name){
-	Room r;
+void printFile(const char* filename, int totRoom){
+	Room room;
 	ofstream out(filename);
 	if (out.is_open())
 	{
-		if (r.getStatusEmpty() == false){
+		if (room.getStatusEmpty() == false){
 			for (int i = 0; i < totRoom; i++)
 			{
 				out << "GUEST ROOM LIST";
 				out << "No. " << setw(5) << "Room No. " << setw (10) << "Guest Name";
-				out << i+1 << setw(5) << r.getRoom() << setw(10) << r.getNameCustomer() << endl;
+				out << i+1 << setw(5) << room.getRoom() << setw(10) << room.getNameCustomer() << endl;
 			}
 		}
-		if (r.getStatusEmpty() == true){
+		if (room.getStatusEmpty() == true){
 			for (int j = 0; j < totRoom; j++){
 				out << "VACANT ROOM LIST";
 				out << "No. " << setw(5) << "Room No.";
-				out << j+1 << setw(5) << r.getRoom() << endl;
+				out << j+1 << setw(5) << room.getRoom() << endl;
 			}
 		}
 	}
