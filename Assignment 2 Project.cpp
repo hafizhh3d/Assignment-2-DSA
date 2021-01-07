@@ -1,8 +1,12 @@
 #include <iostream>
-#include<fstream>
+#include <fstream>
 #include <string>
+#include <iomanip>
 
 using namespace std;
+
+const int size= 15; 
+int A[size]; 
 
 class Room
 {
@@ -70,32 +74,38 @@ class Room
 			nameCustomer = "";
 			statusEmpty = true;
 		}
+
+		// Function for Input File and Sort
+		void InsertFile(const char* filename, int x, int a[])
+		{
+			//Input Data file
+			int sum = 0;
+			ifstream in(filename);
+			if(in.is_open())
+			{
+			while ( in >> x ) 	
+			{ 		
+					A[sum++] = x;
+					cout << setw(size) << x ; 	
+			}
+			//Bubble sort Operation	
+			int temp;	  
+		
+			for (int i = 0; i < size - 1; i++) 		
+				for (int j = 0; j < size - 1; j++) 		
+				{ 			
+					if (A[j] > A[j+1]) 			
+					{ 				
+						temp = A[j]; 
+						A[j] = A[j+1];
+						A[j+1] = temp;
+					} 		
+				}in.close();
+			}else cout<<"Error: File Cannot be Found"<<endl;
+		}
 };
 
-void InsertFile(const char* filename, int x, int a[])
-{
-	ifstream in(filename);
-	if(in.is_open())
-    {
-		bool swapped = true;
-		
-	    int y = 0;
-	    int tmp;
-	    while (swapped) {
-	        swapped = false;
-			y++;
-	        for (int i = 0; i < x - y; i++) {
-	      			if (a[i] > a[i + 1]) {
-	                    tmp = a[i];
-	                    a[i] = a[i + 1];
-	                    a[i + 1] = tmp;
-	                    swapped = true;
-						}
-	                  }
-	
-	            }
-	}else cout<<"Error: File Cannot be Found"<<endl;
-}
+
 
 int main ()
 {
