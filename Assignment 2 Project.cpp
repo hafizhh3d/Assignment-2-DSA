@@ -67,9 +67,30 @@ class Room
 		void checkOut()
 		{
 			nameCustomer = "";
-			statusEmpty = true;
+			//statusEmpty = true;
+			int totRoom[1000], roomSize;
+			int found = 0, left = 0, right = roomSize - 1;
+			while (right <= left){
+				int middle = left  + (right - left) / 2;
+				if (totRoom[middle] == getRoom()){
+					cout << "Room No. " << getRoom();
+					found = 1;
+				}
+				if (totRoom[middle] < getRoom()){
+					left = middle + 1;
+				}
+				else{
+					right = middle - 1;
+				}
+			}
+			cout << "\nRoom Not Found";
+			if (found == 1){
+				statusEmpty = true;
+				cout << "\n\nYour guest checked out successfully!";
+			}
 		}
 };
+
 
 int main ()
 {
