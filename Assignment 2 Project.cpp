@@ -1,6 +1,7 @@
 #include <iostream>
 #include <string>
-
+#include <fstream>
+#include <iomanip>
 using namespace std;
 
 class Room
@@ -70,6 +71,29 @@ class Room
 			statusEmpty = true;
 		}
 };
+
+void printFile(const char* filename, int totRoom, int arr[], string name){
+	Room r;
+	ofstream out(filename);
+	if (out.is_open())
+	{
+		if (r.getStatusEmpty() == false){
+			for (int i = 0; i < totRoom; i++)
+			{
+				out << "GUEST ROOM LIST";
+				out << "No. " << setw(5) << "Room No. " << setw (10) << "Guest Name";
+				out << i+1 << setw(5) << r.getRoom() << setw(10) << r.getNameCustomer() << endl;
+			}
+		}
+		if (r.getStatusEmpty() == true){
+			for (int j = 0; j < totRoom; j++){
+				out << "VACANT ROOM LIST";
+				out << "No. " << setw(5) << "Room No.";
+				out << j+1 << setw(5) << r.getRoom() << endl;
+			}
+		}
+	}
+}
 
 int main ()
 {
