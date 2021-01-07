@@ -76,35 +76,35 @@ class Room
 		}
 };
 
-		// Function for Input File and Sort
-		void InsertFile(const char* filename, int x, int a[])
-		{
-			//Input Data file
-			int sum = 0;
-			ifstream in(filename);
-			if(in.is_open())
-			{
-			while ( in >> x ) 	
-			{ 		
-					A[sum++] = x;
-					cout << setw(size) << x ; 	
-			}
-			//Bubble sort Operation	
-			int temp;	  
-		
-			for (int i = 0; i < size - 1; i++) 		
-				for (int j = 0; j < size - 1; j++) 		
-				{ 			
-					if (A[j] > A[j+1]) 			
-					{ 				
-						temp = A[j]; 
-						A[j] = A[j+1];
-						A[j+1] = temp;
-					} 		
-				}in.close();
-			}else cout<<"Error: File Cannot be Found"<<endl;
-		}
-};
+// Function for Input File and Sort
+void InsertFile(const char* filename, int x, int a[])
+{
+	//Input Data file
+	int sum = 0;
+	ifstream in(filename);
+	if(in.is_open())
+	{
+	while ( in >> x ) 	
+	{ 		
+			A[sum++] = x;
+			cout << setw(size) << x ; 	
+	}
+	//Bubble sort Operation	
+	int temp;	  
+
+	for (int i = 0; i < size - 1; i++) 		
+		for (int j = 0; j < size - 1; j++) 		
+		{ 			
+			if (A[j] > A[j+1]) 			
+			{ 				
+				temp = A[j]; 
+				A[j] = A[j+1];
+				A[j+1] = temp;
+			} 		
+		}in.close();
+	}else cout<<"Error: File Cannot be Found"<<endl;
+}
+
 
 
 
