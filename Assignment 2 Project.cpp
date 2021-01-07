@@ -74,6 +74,7 @@ class Room
 			nameCustomer = "";
 			statusEmpty = true;
 		}
+};
 
 		// Function for Input File and Sort
 		void InsertFile(const char* filename, int x, int a[])
@@ -110,6 +111,6 @@ class Room
 int main ()
 {
 	cout << "Hotel Mangement System" << endl;
-	
+
 	return 0;
 }
